@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.lanhu.android_growth_plan">
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:name=".gaiban.app.config.RxApplication"
+        android:theme="@style/AppTheme">
+
+        <!-- 闪屏页 -->
+        <activity
+            android:name=".gaiban.mvvm.view.activity.SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppStartLoad">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity android:name=".gaiban.mvvm.view.activity.MainActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <!-- 历史纪录 -->
+        <activity android:name=".gaiban.mvvm.view.activity.HistoryActivity"
+            android:screenOrientation="portrait">
+
+
+        </activity>
+        <!-- 切换课程 -->
+        <activity android:name=".gaiban.mvvm.view.activity.MoreSubjectActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <!-- 切换年纪 -->
+        <activity android:name=".gaiban.mvvm.view.activity.GradeSwitchActivity"
+            android:screenOrientation="portrait"/>
+        <!-- 购买记录 -->
+        <activity android:name=".gaiban.mvvm.view.activity.BuyListActivity"
+            android:screenOrientation="portrait"/>
+        <!-- 联系我们 -->
+        <activity android:name=".gaiban.mvvm.view.activity.ContacyUsActivity"
+            android:screenOrientation="portrait"/>
+        <!-- 关于我们 -->
+        <activity android:name=".gaiban.mvvm.view.activity.AboutUsActivity"
+            android:screenOrientation="portrait"/>
+        <!-- 修改密码 -->
+        <activity android:name=".gaiban.mvvm.view.activity.ChangePasswordActivity"
+            android:screenOrientation="portrait"/>
+        <!-- 密码登陆-->
+        <activity android:name=".gaiban.mvvm.view.activity.PasswordLoginActivity"
+            android:screenOrientation="portrait">
+
+
+        </activity>
+        <!-- 短信登陆-->
+        <activity android:name=".gaiban.mvvm.view.activity.YzmLoginActivity"
+            android:screenOrientation="portrait"/>
+        <!-- 忘记密码-->
+        <activity android:name=".gaiban.mvvm.view.activity.ForgetPasswordActivity"
+            android:screenOrientation="portrait"/>
+        <!-- 补充信息-->
+        <activity android:name=".gaiban.mvvm.view.activity.SupplementaryActvity"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <!-- 注册页面 -->
+        <activity android:name=".gaiban.mvvm.view.activity.RegisterActivity"
+            android:screenOrientation="portrait">
+
+
+        </activity>
+        <!-- 专题页面 -->
+        <activity android:name=".gaiban.mvvm.view.activity.SpecialActivity"
+            android:screenOrientation="portrait"/>
+
+        <!-- 详情页面 -->
+        <activity android:name=".gaiban.mvvm.view.activity.DetailActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+
+        <!-- 当sdk>=N的时候,就要通过FilepProvider来传递uri了 -->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+    </application>
+
+</manifest>

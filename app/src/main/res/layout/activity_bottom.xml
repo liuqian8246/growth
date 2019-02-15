@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dip_50"
+        android:background="@android:color/white"
+        android:orientation="horizontal"
+        >
+
+        <LinearLayout
+            android:id="@+id/ll_shouye"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackground"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/dip_3"
+            android:paddingTop="@dimen/dip_3">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="@dimen/dip_26"
+                android:layout_height="27dp"
+                android:layout_marginBottom="@dimen/dip_2"
+                android:layout_marginTop="@dimen/dip_2"
+                android:src="@drawable/background_shouye_selector"
+                android:padding="@dimen/dip_1"
+                />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="首页"
+                android:textColor="@drawable/text_color_sel"
+                android:textSize="@dimen/sp_10"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_jiekuan"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackground"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/dip_3"
+            android:paddingTop="@dimen/dip_3">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="@dimen/dip_26"
+                android:layout_height="@dimen/dip_26"
+                android:padding="@dimen/dip_1"
+                android:src="@drawable/background_xuexi_selector"
+                android:layout_marginTop="@dimen/dip_2"
+                android:layout_marginBottom="@dimen/dip_2"
+                />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="学习"
+                android:textColor="@drawable/text_color_sel"
+                android:textSize="@dimen/sp_10"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_chujie"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackground"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/dip_3"
+            android:paddingTop="@dimen/dip_3">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="@dimen/dip_50"
+                android:layout_height="@dimen/dip_26"
+                android:layout_marginTop="@dimen/dip_2"
+                android:layout_marginBottom="@dimen/dip_2"
+                android:paddingTop="@dimen/dip_3"
+                android:src="@drawable/background_jihua_selector"
+                android:paddingBottom="@dimen/dip_1"
+                />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="计划"
+                android:textColor="@drawable/text_color_sel"
+                android:textSize="@dimen/sp_10"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_mine"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackground"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/dip_3"
+            android:paddingTop="@dimen/dip_3">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="@dimen/dip_50"
+                android:layout_height="@dimen/dip_26"
+                android:layout_marginTop="@dimen/dip_2"
+                android:layout_marginBottom="@dimen/dip_2"
+                android:src="@drawable/background_wode_selector"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="我的"
+                android:textColor="@drawable/text_color_sel"
+                android:textSize="@dimen/sp_10"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite"
+            android:focusableInTouchMode="true"
+            android:focusable="true"
+            android:orientation="vertical">
+
+            <include layout="@layout/layout_title_bar"
+                android:id="@+id/title_bar"/>
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:overScrollMode="never"
+                android:layout_marginTop="@dimen/dip_9"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <Button
+                android:id="@+id/btn_seemore"
+                android:text="查看更多"
+                android:textColor="@color/colorWhite"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dip_45"
+                android:background="@drawable/background_histort_button"
+                android:layout_marginLeft="@dimen/dip_40"
+                android:layout_marginRight="@dimen/dip_40"
+                android:layout_marginTop="@dimen/dip_29"
+                android:layout_marginBottom="@dimen/dip_40"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</layout>

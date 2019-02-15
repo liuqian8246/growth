@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/loading"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:background="@drawable/dialog_background"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="@dimen/dip_250"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_9"
+            android:layout_marginTop="@dimen/magin_12"
+            android:text="新建文件夹"
+            android:textColor="@color/colorText40"
+            android:textSize="@dimen/sp_15"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="请为此文件夹输入名称"
+            android:textColor="@color/colorText43"
+            android:textSize="@dimen/sp_13"/>
+        
+        <EditText
+            android:paddingLeft="@dimen/dip_10"
+            android:paddingRight="@dimen/dip_10"
+            android:layout_marginTop="@dimen/dip_10"
+            android:id="@+id/et_file_name"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dip_24"
+            android:hint="名称"
+            android:background="@drawable/background_bg_edit_shape"
+            android:layout_marginLeft="@dimen/dip_25"
+            android:layout_marginRight="@dimen/dip_25"
+            android:textSize="@dimen/sp_12"
+            android:textColorHint="@color/colorText44"
+            android:textColor="@color/colorText40"/>
+    </LinearLayout>
+    <View
+        android:layout_marginTop="@dimen/magin_15"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#D1D1D1"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dip_40"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/cancel_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="取消"
+            android:background="@null"
+            android:textColor="@color/colorText1"
+            android:textSize="@dimen/sp_18" />
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:background="#D1D1D1" />
+
+        <Button
+            android:id="@+id/confirm_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="存储"
+            android:background="@null"
+            android:textColor="@color/pickerview_topbar_title"
+            android:textSize="@dimen/sp_18" />
+    </LinearLayout>
+</LinearLayout>

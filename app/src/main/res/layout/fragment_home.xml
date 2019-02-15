@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dip_10"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dip_70"
+                    android:layout_marginLeft="@dimen/dip_17"
+                    android:layout_weight="1"
+                    android:background="@color/colorWhite"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/dip_8"
+                    android:paddingLeft="@dimen/dip_8"
+                    android:paddingRight="@dimen/dip_8"
+                    android:paddingTop="@dimen/dip_8">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/czjh_ssbj"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/dip_20"
+                            android:layout_height="@dimen/dip_20"
+                            android:layout_marginLeft="@dimen/dip_30"
+                            android:src="@drawable/czjh_sousuo3x" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:hint="搜索"
+                            android:textColorHint="@color/colorText6"
+                            android:textSize="@dimen/sp_14" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dip_24"
+                    android:layout_marginRight="@dimen/dip_28"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/dip_20"
+                        android:layout_height="@dimen/dip_20"
+                        android:src="@drawable/czjh_lxkf" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="客服"
+                        android:textColor="@color/colorText10" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <cn.lanhu.android_growth_plan.widget.convenientbanner.ConvenientBanner
+                android:id="@+id/content_container"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dip_170"
+                android:layout_marginLeft="@dimen/dip_24" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="@dimen/dip_20"
+                android:layout_marginRight="@dimen/dip_20"
+                android:layout_marginTop="@dimen/dip_17"
+                android:layout_height="wrap_content"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:descendantFocusability="blocksDescendants">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dip_24"
+                    android:layout_marginTop="@dimen/dip_35" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+</layout>

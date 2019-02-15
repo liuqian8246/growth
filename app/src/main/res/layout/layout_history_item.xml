@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dip_124"
+    android:layout_marginLeft="@dimen/dip_11"
+    android:layout_marginRight="@dimen/dip_11"
+    android:layout_marginTop="@dimen/dip_24"
+    android:gravity="center"
+    android:background="@drawable/background_item_history"
+    android:orientation="vertical">
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/dip_6"
+            android:layout_height="@dimen/dip_15"
+            android:layout_marginLeft="@dimen/dip_15"
+            android:src="@drawable/czjh_history3x"/>
+
+        <TextView
+            android:layout_marginLeft="@dimen/dip_8"
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:text="2018-2-15"
+            android:textSize="@dimen/sp_17"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+        
+        <ImageView
+            android:layout_width="@dimen/dip_16"
+            android:layout_height="@dimen/dip_14"
+            android:src="@drawable/czjh_dz3x"/>
+
+        <TextView
+            android:id="@+id/tv_dxnum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="133"
+            android:layout_marginLeft="@dimen/dip_6"
+            android:layout_marginRight="@dimen/dip_33"
+            android:textSize="@dimen/sp_13"
+            android:textColor="@color/hintColor"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dip_23"
+        android:layout_marginRight="@dimen/dip_18"
+        android:textSize="@dimen/sp_14"
+        android:textColor="@color/colorText1"
+        android:text="从 2015 年 4 月起，Ant Design 在蚂蚁金服中后台产品线迅速推广，对接多条业务线，覆盖系统 800 个以上。定位"/>
+
+
+</LinearLayout>

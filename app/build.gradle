@@ -1,0 +1,195 @@
+apply plugin: "com.android.application"
+apply plugin: "me.tatarka.retrolambda"
+
+def config = rootProject.ext.android
+def signFig = rootProject.ext.SigningConfigs
+
+android {
+
+    compileSdkVersion config.compileSdkVersion
+    buildToolsVersion config.buildToolsVersion
+    useLibrary "org.apache.http.legacy"
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+
+        applicationId config.applicationId
+        minSdkVersion config.minSdkVersion
+        targetSdkVersion config.targetSdkVersion
+        versionCode config.versionCode
+        versionName config.versionName
+        multiDexEnabled true
+        multiDexKeepProguard file(config.multiDexKeepPro)
+        multiDexKeepFile file(config.multiDexKeepTxt)
+        resConfigs config.resConfigZH
+
+        ndk {
+//            abiFilters config.DNK_AbiFilter_Armeabi
+            abiFilters config.DNK_AbiFilter_V7a
+//            abiFilters config.DNK_AbiFilter_X86
+
+//            , "armeabi-v7a","x86"
+        }
+        dataBinding {
+            enabled = true
+        }
+
+    }
+
+
+    signingConfigs {
+        defaultConfig {
+            keyAlias signFig.keyAlias
+            keyPassword signFig.keyPassword
+            storeFile file(signFig.storeFile)
+            storePassword signFig.storePassword
+        }
+
+    }
+    buildTypes {
+        release {
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            buildConfigField "boolean", "USE_CANARY", "false"
+            debuggable false
+            minifyEnabled true
+            zipAlignEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile(config.proguardAndroidTxt), config.proguardRulesPro
+            signingConfig signingConfigs.defaultConfig
+        }
+        debug {
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+            buildConfigField "boolean", "USE_CANARY", "true"
+            debuggable true
+            minifyEnabled false
+            zipAlignEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile(config.proguardAndroidTxt), config.proguardRulesPro
+            signingConfig signingConfigs.defaultConfig
+        }
+    }
+
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+        ignoreWarnings true
+        disable "InvalidPackage"
+        disable "ResourceType"
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ["libs"]
+        }
+    }
+
+    packagingOptions {
+        exclude "META-INF/DEPENDENCIES"
+        exclude "META-INF/NOTICE"
+        exclude "META-INF/LICENSE"
+        exclude "META-INF/LICENSE.txt"
+        exclude "META-INF/NOTICE.txt"
+        exclude "META-INF/ASL2.0"
+        exclude "META-INF/notice.txt"
+
+    }
+
+    dexOptions {
+        preDexLibraries false
+        maxProcessCount 8
+        javaMaxHeapSize "2560m"
+    }
+
+    aaptOptions {
+        cruncherEnabled false
+    }
+
+
+}
+
+repositories {
+    flatDir {
+        dirs "libs"
+    }
+}
+
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    //support
+    compile rootProject.ext.dependencies["constraint-layout"]
+    compile rootProject.ext.dependencies["annotations"]
+    compile(rootProject.ext.dependencies["support-v4"]) {
+        exclude module: 'support-annotations'
+    }
+    compile(rootProject.ext.dependencies["appcompat-v7"]) {
+        exclude module: 'support-annotations'
+        exclude module: 'support-v4'
+    }
+    compile(rootProject.ext.dependencies["design"]) {
+        exclude module: 'support-annotations'
+        exclude module: 'appcompat-v7'
+        exclude module: 'support-v4'
+    }
+    compile(rootProject.ext.dependencies["cardview-v7"]) {
+        exclude module: 'support-annotations'
+    }
+    compile rootProject.ext.dependencies["recyclerview-v7"]
+    //mvvm arch
+    //    compile rootProject.ext.dependencies["lifecycle-runtime"]
+    compile rootProject.ext.dependencies["lifecycle-extensions"]
+    annotationProcessor rootProject.ext.dependencies["lifecycle-compiler"]
+    //network
+    compile(rootProject.ext.dependencies["retrofit"]) {
+        exclude module: 'okhttp'
+        exclude module: 'okio'
+    }
+    compile(rootProject.ext.dependencies["retrofit-converter-gson"]) {
+        exclude module: 'gson'
+        exclude module: 'okhttp'
+        exclude module: 'okio'
+        exclude module: 'retrofit'
+    }
+    compile(rootProject.ext.dependencies["retrofit-adapter-rxjava"]) {
+        exclude module: 'rxjava'
+        exclude module: 'okhttp'
+        exclude module: 'retrofit'
+        exclude module: 'okio'
+    }
+    compile rootProject.ext.dependencies["okhttp3"]
+    compile(rootProject.ext.dependencies["glide"]) {
+        exclude module: 'support-v4'
+    }
+    compile rootProject.ext.dependencies["gson"]
+    compile rootProject.ext.dependencies["okhttputils"]
+    //rx1 and tools
+    compile rootProject.ext.dependencies["rxjava"]
+    compile rootProject.ext.dependencies["rxandroid"]
+    compile rootProject.ext.dependencies["rxbinding"]
+    compile rootProject.ext.dependencies["rxlifecycle"]
+    compile rootProject.ext.dependencies["rxlifecycle-components"]
+    compile rootProject.ext.dependencies["rxpermissions"]
+    //view
+    compile rootProject.ext.dependencies["CircleImageview"]
+    compile rootProject.ext.dependencies["MaterialDialog"]
+    compile rootProject.ext.dependencies["ShortcutBadger"]
+    compile rootProject.ext.dependencies["SmartRefresh"]
+    compile rootProject.ext.dependencies["StatusbarUtil"]
+    compile rootProject.ext.dependencies["imagewatcher"]
+    compile rootProject.ext.dependencies["gif-drawable"]
+    compile rootProject.ext.dependencies["Pickerview"]
+    compile rootProject.ext.dependencies["matisse"]
+    //anim
+    //data
+    compile rootProject.ext.dependencies["litepal"]
+    compile rootProject.ext.dependencies["Luban"]
+    //tools
+    compile rootProject.ext.dependencies["logger"]
+    debugCompile rootProject.ext.dependencies["canary-debug"]
+    releaseCompile rootProject.ext.dependencies["canary-release"]
+}

@@ -1,0 +1,135 @@
+ext {
+
+    android = [
+            compileSdkVersion    : 27,
+            buildToolsVersion    : '27.0.3',
+            minSdkVersion        : 15,
+            targetSdkVersion     : 27,
+            resConfigZH          : 'zh',
+            multiDexKeepPro      : 'multiDexKeep.pro',
+            multiDexKeepTxt      : 'multiDexKeep.txt',
+            DNK_AbiFilter_Armeabi: 'armeabi',
+            DNK_AbiFilter_V7a    : 'armeabi-v7a',//用v7a只是体验更好，用abi就可以了
+            DNK_AbiFilter_X86    : 'x86',//用于模拟器调试
+            proguardAndroidTxt   : 'proguard-android.txt',
+            proguardRulesPro     : 'proguard-rules.pro',
+            DexMaxProcessCount   : 8,
+            JavaMaxHeapSize      : '2560m',
+            applicationId        : 'cn.lanhu.android_growth_plan',
+            versionCode          : 3299,
+            versionName          : '1.0.0',
+            Walle_apkFileName    : 'czjh_${channel}.apk'
+    ]
+
+    SigningConfigs = [
+            keyAlias     : "chengzhangjihua",
+            keyPassword  : "1qaz@WSX",
+            storeFile    : "keystore/chengzhangjihua.jks",
+            storePassword: "1qaz@WSX"
+
+    ]
+
+    version = [
+            androidSupportSdkVersion: "27.1.1",
+            androidArchSdkVersion   : "1.1.0",
+            retrofitSdkVersion      : "2.3.0",
+            glideSdkVersion         : "3.7.0",
+            dagger2SdkVersion       : "2.15",
+            rxlifecycleSdkVersion   : "1.0",
+            rxlifecycle2SdkVersion  : "2.2.1",
+            espressoSdkVersion      : "3.0.1",
+            canarySdkVersion        : "1.5.4",
+    ]
+
+    dependencies = [
+
+            //support
+            "appcompat-v7"             : "com.android.support:appcompat-v7:${version["androidSupportSdkVersion"]}",
+            "design"                   : "com.android.support:design:${version["androidSupportSdkVersion"]}",
+            "support-v4"               : "com.android.support:support-v4:${version["androidSupportSdkVersion"]}",
+            "cardview-v7"              : "com.android.support:cardview-v7:${version["androidSupportSdkVersion"]}",
+            "annotations"              : "com.android.support:support-annotations:${version["androidSupportSdkVersion"]}",
+            "recyclerview-v7"          : "com.android.support:recyclerview-v7:${version["androidSupportSdkVersion"]}",
+            "constraint-layout"        : "com.android.support.constraint:constraint-layout:1.1.2",      //约束布局
+
+            //view
+            "CircleImageview"          : "de.hdodenhof:circleimageview:2.2.0",
+            "MaterialDialog"           : "me.drakeet.materialdialog:library:1.3.1",
+            "ShortcutBadger"           : "me.leolin:ShortcutBadger:1.1.18@aar",
+            "SmartRefresh"             : "com.scwang.smartrefresh:SmartRefreshLayout:1.0.3",
+            "StatusbarUtil"            : "com.jaeger.statusbarutil:library:1.4.0",
+            "PhotoView"                : "com.github.chrisbanes:PhotoView:2.1.3",
+            "imagewatcher"             : "ch.ielse:imagewatcher:1.0.0",     //图片查看器
+            "gif-drawable"             : "pl.droidsonroids.gif:android-gif-drawable:1.2.10",//gif图片加载控件
+            "Pickerview"               : "com.contrarywind:Android-PickerView:3.2.6",//PickView
+            "matisse"                  : "com.zhihu.android:matisse:0.5.1",
+
+            //data
+            "litepal"                  : "org.litepal.android:core:1.6.0",//数据库
+            "Luban"                    : "top.zibin:Luban:1.1.3",        //图片压缩算法，最接近微信图片压缩算法策略
+
+            //mvvm( Lifecycles, LiveData, and ViewModel, Room)
+            "lifecycle-runtime"        : "android.arch.lifecycle:runtime:${version["androidArchSdkVersion"]}",
+            "lifecycle-extensions"     : "android.arch.lifecycle:extensions:${version["androidArchSdkVersion"]}",
+            "lifecycle-compiler"       : "android.arch.lifecycle:compiler:${version["androidArchSdkVersion"]}",
+            "room-runtime"             : "android.arch.persistence.room:runtime:${version["androidArchSdkVersion"]}",
+            "room-compiler"            : "android.arch.persistence.room:compiler:${version["androidArchSdkVersion"]}",
+            "room-testing"             : "android.arch.persistence.room:testing:${version["androidArchSdkVersion"]}",
+            "room-rxjava2"             : "android.arch.persistence.room:rxjava2:${version["androidArchSdkVersion"]}",
+
+            //network
+            "retrofit"                 : "com.squareup.retrofit2:retrofit:${version["retrofitSdkVersion"]}",
+            "retrofit-converter-gson"  : "com.squareup.retrofit2:converter-gson:${version["retrofitSdkVersion"]}",
+            "retrofit-adapter-rxjava"  : "com.squareup.retrofit2:adapter-rxjava:${version["retrofitSdkVersion"]}",
+            "retrofit-adapter-rxjava2" : "com.squareup.retrofit2:adapter-rxjava2:${version["retrofitSdkVersion"]}",
+            "retrofit-url-manager"     : "me.jessyan:retrofit-url-manager:1.3.0",
+            "okhttp3"                  : "com.squareup.okhttp3:okhttp:3.9.0",
+            "okhttp-urlconnection"     : "com.squareup.okhttp:okhttp-urlconnection:2.0.0",
+            "glide"                    : "com.github.bumptech.glide:glide:${version["glideSdkVersion"]}",
+            "glide-compiler"           : "com.github.bumptech.glide:compiler:${version["glideSdkVersion"]}",
+            "glide-loader-okhttp3"     : "com.github.bumptech.glide:okhttp3-integration:${version["glideSdkVersion"]}",
+            "okhttputils"              : "com.zhy:okhttputils:2.6.2",
+
+            //rx1
+            "rxjava"                   : "io.reactivex:rxjava:1.3.2",
+            "rxandroid"                : "io.reactivex:rxandroid:1.2.1",
+            "rxbinding"                : "com.jakewharton.rxbinding:rxbinding:0.4.0",
+            "rxlifecycle"              : "com.trello:rxlifecycle:${version["rxlifecycleSdkVersion"]}",
+            "rxlifecycle-components"   : "com.trello:rxlifecycle-components:${version["rxlifecycleSdkVersion"]}",
+            "rxcache"                  : "com.github.VictorAlbertos.RxCache:runtime:1.7.0-1.x",
+            "rxbinding-recyclerview-v7": "com.jakewharton.rxbinding:rxbinding-recyclerview-v7:1.0.1",
+            "rxpermissions"            : "com.tbruyelle.rxpermissions:rxpermissions:0.9.4@aar",
+            "rxerrorhandler"           : "me.jessyan:rxerrorhandler:1.0.1",
+
+            //rx2
+            "rxjava2"                  : "io.reactivex.rxjava2:rxjava:2.1.6",
+            "rxandroid2"               : "io.reactivex.rxjava2:rxandroid:2.0.1",
+            "rx2cache"                 : "com.github.VictorAlbertos.RxCache:runtime:1.8.1-2.x",
+            "rxlifecycle2"             : "com.trello.rxlifecycle2:rxlifecycle-components:${version["rxlifecycle2SdkVersion"]}",
+            "rxbinding2"               : "com.jakewharton.rxbinding2:rxbinding:2.1.1",
+            "rxpermissions2"           : "com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar",
+            "rxerrorhandler2"          : "me.jessyan:rxerrorhandler:2.1.0",
+
+            //rx-gson-tools
+            "rxcache-jolyglot-gson"    : "com.github.VictorAlbertos.Jolyglot:gson:0.0.3",
+
+            //tools
+            "gson"                     : "com.google.code.gson:gson:2.8.2",
+
+            //三方sdk
+            //test
+            "junit"                    : "junit:junit:4.12",
+            "androidJUnitRunner"       : "android.support.test.runner.AndroidJUnitRunner",
+            "runner"                   : "com.android.support.test:runner:1.0.1",
+            "espresso-core"            : "com.android.support.test.espresso:espresso-core:${version["espressoSdkVersion"]}",
+            "espresso-contrib"         : "com.android.support.test.espresso:espresso-contrib:${version["espressoSdkVersion"]}",
+            "espresso-intents"         : "com.android.support.test.espresso:espresso-intents:${version["espressoSdkVersion"]}",
+            "mockito-core"             : "org.mockito:mockito-core:1.+",
+            "timber"                   : "com.jakewharton.timber:timber:4.6.0",//log
+            "logger"                   : "com.orhanobut:logger:1.15",//log
+            "canary-debug"             : "com.squareup.leakcanary:leakcanary-android:${version["canarySdkVersion"]}",
+            "canary-release"           : "com.squareup.leakcanary:leakcanary-android-no-op:${version["canarySdkVersion"]}",
+    ]
+
+
+}
