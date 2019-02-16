@@ -78,6 +78,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <!-- 注册页面 -->
         <activity android:name=".gaiban.mvvm.view.activity.RegisterActivity"
@@ -94,7 +95,6 @@
             android:screenOrientation="portrait">
 
         </activity>
-
         <!-- 填写资料 -->
         <activity android:name=".gaiban.mvvm.view.activity.WriteInfoActivity"
             android:screenOrientation="portrait">

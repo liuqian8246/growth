@@ -3,9 +3,6 @@ package cn.lanhu.android_growth_plan.gaiban.mvvm.view.activity;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.text.TextUtils;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
 
 import com.bigkoo.pickerview.OptionsPickerView;
 import com.bigkoo.pickerview.TimePickerView;
@@ -20,18 +17,24 @@ import cn.lanhu.android_growth_plan.entity.base.BaseBean;
 import cn.lanhu.android_growth_plan.gaiban.mvvm.base.BaseBindingActivity;
 import cn.lanhu.android_growth_plan.gaiban.mvvm.viewmodel.DateViewModel;
 import cn.lanhu.android_growth_plan.gaiban.mvvm.viewmodel.UserViewModel;
-import cn.lanhu.android_growth_plan.utils.sysrelated.CustomUtils;
 import cn.lanhu.android_growth_plan.utils.sysrelated.IntentUtils;
 import cn.lanhu.android_growth_plan.utils.uirelated.ToastUtils;
 import cn.lanhu.android_growth_plan.utils.uirelated.rxui.RxViewUtils;
-import cn.lanhu.android_growth_plan.widget.CustomerOptionsPickerView;
 import rx.Subscriber;
 
 public class SupplementaryActvity extends BaseBindingActivity<ActivitySupplementaryBinding> {
 
     private UserViewModel mUserViewModel;
+
+    private ArrayList<String> mProvince = new ArrayList<>();
+    private ArrayList<ListEntity.Bean> mClassId = new ArrayList<>();
+    private ArrayList<String> mClasss = new ArrayList<>();
+    //    private ArrayList<ListEntity.Bean> mProfession = new ArrayList<>();
+//    private ArrayList<String> mProfessions = new ArrayList<>();
     private ArrayList<String> mSex = new ArrayList<>();
     private ArrayList<String> mIdentity = new ArrayList<>();
+    private DateViewModel mDateViewModel;
+
 
     {
         mSex.add("男");
@@ -56,10 +59,45 @@ public class SupplementaryActvity extends BaseBindingActivity<ActivitySupplement
 
     @Override
     protected void initView() {
+
         mUserViewModel = ViewModelProviders.of(this).get(UserViewModel.class);
         mLoginEntity = getIntent().getParcelableExtra("loginEntity");
         flag = getIntent().getStringExtra("flag");
 
+    }
+
+    private void getlist() {
+        mUserViewModel.getProvince().subscribe(new Subscriber<BaseBean<ListEntity>>() {
+            @Override
+            public void onCompleted() {
+
+            }
+
+            @Override
+            public void onError(Throwable throwable) {
+
+            }
+
+            @Override
+            public void onNext(BaseBean<ListEntity> baseBean) {
+                if (baseBean.getCode().equals("0")) {
+                    if (baseBean.getData() != null) {
+                        mProvince.addAll(baseBean.getData().getProvince());
+                        mClassId.addAll(baseBean.getData().getClassId());
+//                        mProfession.addAll(baseBean.getData().getProfession());
+//                        for (ListEntity.Bean bean : mProfession) {
+//                            mProfessions.add(bean.getName());
+//                        }
+
+                        for (ListEntity.Bean bean : mClassId) {
+                            mClasss.add(bean.getName());
+                        }
+                    }
+                } else {
+                    ToastUtils.showToast(baseBean.getMsg());
+                }
+            }
+        });
     }
 
 
@@ -67,6 +105,27 @@ public class SupplementaryActvity extends BaseBindingActivity<ActivitySupplement
     protected void onResume() {
         super.onResume();
 
+    }
+
+
+//    private void initProfessionView() {
+//        if (mProfessionView == null) {
+//            mDateViewModel.initOptionsPickerViewBuidler()
+//                    .observe(this, s -> {
+//                        String[] str = s.split("-");
+//                        mVB.tvMengxiang.setText(mProfession.get(Integer.valueOf(str[0])).getName());
+//                    });
+//        }
+//        mProfessionView = mDateViewModel.getOptionsPickerViewBuider();
+//    }
+
+    private int getPosition(ArrayList<ListEntity.Bean> arrayList, String name) {
+        for (int i = 0; i < arrayList.size(); i++) {
+            if (arrayList.get(i).getName().equals(name)) {
+                return i;
+            }
+        }
+        return 0;
     }
 
     @Override
@@ -121,29 +180,30 @@ public class SupplementaryActvity extends BaseBindingActivity<ActivitySupplement
             }
         });
 
-        RxViewUtils.onViewClick(mVB.tvNicheng,() ->{
-           new IntentUtils.Builder(mContext)
-                   .setTargetActivity(WriteInfoActivity.class)
-                   .setStringExtra("title","您的信息")
-                   .setStringExtra("flag","1")
-                   .build()
-                   .startActivityForResult(101);
-        });
 
-        RxViewUtils.onViewClick(mVB.tvBabyNicheng,() ->{
+        RxViewUtils.onViewClick(mVB.tvNicheng, () -> {
             new IntentUtils.Builder(mContext)
                     .setTargetActivity(WriteInfoActivity.class)
-                    .setStringExtra("title","孩子昵称")
-                    .setStringExtra("flag","2")
+                    .setStringExtra("title", "您的信息")
+                    .setStringExtra("flag", "1")
                     .build()
                     .startActivityForResult(101);
         });
 
-        RxViewUtils.onViewClick(mVB.tvMengxiang,() ->{
+        RxViewUtils.onViewClick(mVB.tvBabyNicheng, () -> {
             new IntentUtils.Builder(mContext)
                     .setTargetActivity(WriteInfoActivity.class)
-                    .setStringExtra("title","孩子梦想")
-                    .setStringExtra("flag","3")
+                    .setStringExtra("title", "孩子昵称")
+                    .setStringExtra("flag", "2")
+                    .build()
+                    .startActivityForResult(101);
+        });
+
+        RxViewUtils.onViewClick(mVB.tvMengxiang, () -> {
+            new IntentUtils.Builder(mContext)
+                    .setTargetActivity(WriteInfoActivity.class)
+                    .setStringExtra("title", "孩子梦想")
+                    .setStringExtra("flag", "3")
                     .build()
                     .startActivityForResult(101);
         });
@@ -153,6 +213,18 @@ public class SupplementaryActvity extends BaseBindingActivity<ActivitySupplement
         });
 
         RxViewUtils.onViewClick(mVB.tvBrith, () -> {
+
+        });
+
+        RxViewUtils.onViewClick(mVB.tcBabyBirth, () -> {
+
+        });
+
+        RxViewUtils.onViewClick(mVB.tvShenfen, () -> {
+
+        });
+
+        RxViewUtils.onViewClick(mVB.tvSex, () -> {
 
         });
 
@@ -218,6 +290,11 @@ public class SupplementaryActvity extends BaseBindingActivity<ActivitySupplement
 
         RxViewUtils.onViewClick(mVB.tvClass, () -> {
 
+
+        });
+
+        RxViewUtils.onViewClick(mVB.tvCity, () -> {
+
         });
 
         RxViewUtils.onViewClick(mVB.tvCity, () -> {
@@ -242,7 +319,7 @@ public class SupplementaryActvity extends BaseBindingActivity<ActivitySupplement
         } else if (TextUtils.isEmpty(mVB.tvPassword.getText().toString())) {
             ToastUtils.showToast("密码不能为空");
             return false;
-        }  else if (mVB.tvPassword.getText().toString().length() < 6 || mVB.tvPassword.getText().toString().length() > 18) {
+        } else if (mVB.tvPassword.getText().toString().length() < 6 || mVB.tvPassword.getText().toString().length() > 18) {
             ToastUtils.showToast("密码不能小于6位或者大于18位");
             return false;
         } else if (TextUtils.isEmpty(mVB.tvBabyNicheng.getText().toString())) {
@@ -272,12 +349,12 @@ public class SupplementaryActvity extends BaseBindingActivity<ActivitySupplement
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == 101) {
-            if(resultCode == 1) {
+        if (requestCode == 101) {
+            if (resultCode == 1) {
                 mVB.tvNicheng.setText(data.getStringExtra("content"));
-            } else if(resultCode == 2) {
+            } else if (resultCode == 2) {
                 mVB.tvBabyNicheng.setText(data.getStringExtra("content"));
-            }else if(resultCode == 3) {
+            } else if (resultCode == 3) {
                 mVB.tvMengxiang.setText(data.getStringExtra("content"));
             }
         }
