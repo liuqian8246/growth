@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dip_190"
+                android:layout_marginLeft="@dimen/dip_18"
+                android:layout_marginRight="@dimen/dip_18"
+                android:layout_marginTop="@dimen/dip_23"
+                android:background="@drawable/background_item_course"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dip_24"
+                    android:layout_marginLeft="@dimen/dip_18"
+                    android:layout_marginTop="@dimen/dip_26"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/dip_24"
+                        android:layout_height="@dimen/dip_24"
+                        android:src="@drawable/czjh_mx" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dip_12"
+                        android:text="宝贝梦想"
+                        android:textColor="@color/colorText3"
+                        android:textSize="@dimen/sp_14" />
+
+                    <TextView
+                        android:id="@+id/tv_mengx"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dip_22"
+                        android:text="公务员"
+                        android:textColor="@color/colorText3"
+                        android:textSize="@dimen/sp_14" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <ImageView
+                        android:id="@+id/iv_bj"
+                        android:layout_width="@dimen/dip_20"
+                        android:layout_height="@dimen/dip_20"
+                        android:layout_marginRight="@dimen/dip_17"
+                        android:src="@drawable/cjzh_bj3x" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dip_24"
+                    android:layout_marginLeft="@dimen/dip_18"
+                    android:layout_marginTop="@dimen/dip_26"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/dip_24"
+                        android:layout_height="@dimen/dip_24"
+                        android:src="@drawable/czjh_xx3x" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dip_12"
+                        android:text="宝贝信息"
+                        android:textColor="@color/colorText3"
+                        android:textSize="@dimen/sp_14" />
+
+                    <TextView
+                        android:id="@+id/tv_xx"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dip_22"
+                        android:text="女生 20岁 大一"
+                        android:textColor="@color/colorText3"
+                        android:textSize="@dimen/sp_14" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dip_24"
+                    android:layout_marginLeft="@dimen/dip_18"
+                    android:layout_marginTop="@dimen/dip_26"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/dip_24"
+                        android:layout_height="@dimen/dip_24"
+                        android:src="@drawable/czjh_rcjh" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dip_12"
+                        android:text="日程计划"
+                        android:textColor="@color/colorText3"
+                        android:textSize="@dimen/sp_14" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dip_50"
+                android:layout_marginLeft="@dimen/dip_18"
+                android:layout_marginRight="@dimen/dip_18"
+                android:layout_marginTop="@dimen/dip_29"
+                android:background="@color/color_5080FF">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="日期"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/sp_15" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="事项"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/sp_15" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="备注"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/sp_15" />
+
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dip_18"
+                android:layout_marginRight="@dimen/dip_18" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dip_45"
+                android:layout_marginLeft="@dimen/dip_40"
+                android:layout_marginRight="@dimen/dip_40"
+                android:layout_marginTop="@dimen/dip_30"
+                android:background="@drawable/background_button_ffdz"
+                android:text="付费定制专属成长计划"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/sp_15" />
+        </LinearLayout>
+    </ScrollView>
+
+</layout>

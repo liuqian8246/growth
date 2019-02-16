@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:background="@color/colorWhite"
+        android:overScrollMode="never"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dip_28"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/dip_14"
+                android:background="@color/colorWhite">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="历史收获"
+                    android:textColor="@color/colorText3"
+                    android:textSize="@dimen/sp_20"
+                    android:layout_marginLeft="@dimen/dip_28"/>
+                
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+                
+                <ImageView
+                    android:layout_marginRight="@dimen/dip_33"
+                    android:layout_width="@dimen/dip_22"
+                    android:layout_height="@dimen/dip_22"
+                    android:src="@drawable/czjh_bj3x"/>
+
+            </LinearLayout>
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:overScrollMode="never"
+                android:layout_marginTop="@dimen/dip_8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <Button
+                android:id="@+id/btn_seemore"
+                android:text="查看更多"
+                android:textColor="@color/colorWhite"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dip_45"
+                android:background="@drawable/background_histort_button"
+                android:layout_marginLeft="@dimen/dip_40"
+                android:layout_marginRight="@dimen/dip_40"
+                android:layout_marginTop="@dimen/dip_29"
+                android:layout_marginBottom="@dimen/dip_40"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+</layout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fl_banner"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:foreground="?android:attr/selectableItemBackground">
+
+    <cn.lanhu.android_growth_plan.gaiban.mvvm.view.widget.RoundImageView
+        android:id="@+id/iv_banner"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dip_170"
+        app:RoundImageViewRadius="@dimen/dip_10"
+        android:layout_marginRight="@dimen/dip_10"
+        app:RoundImageViewType="RoundImageViewRound"
+        android:scaleType="fitXY" />
+
+
+</FrameLayout>
+

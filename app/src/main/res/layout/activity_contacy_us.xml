@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:background="@color/colorWhite"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/layout_title_bar"
+            android:id="@+id/title_bar"/>
+
+        <LinearLayout
+            android:id="@+id/ll_weixin"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dip_120"
+            android:orientation="vertical"
+            android:background="@drawable/background_item_history"
+            android:layout_marginLeft="@dimen/dip_11"
+            android:layout_marginRight="@dimen/dip_11"
+            android:layout_marginTop="@dimen/dip_33">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/sp_17"
+                android:textColor="@color/colorBlack"
+                android:text="客服微信"
+                android:layout_marginLeft="@dimen/dip_23"
+                android:layout_marginTop="@dimen/dip_11"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/sp_14"
+                android:textColor="@color/colorText10"
+                android:text="45456456465"
+                android:layout_marginLeft="@dimen/dip_23"
+                android:layout_marginTop="@dimen/dip_30"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_gongzhonghao"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dip_120"
+            android:orientation="vertical"
+            android:background="@drawable/background_item_history"
+            android:layout_marginLeft="@dimen/dip_11"
+            android:layout_marginRight="@dimen/dip_11"
+            android:layout_marginTop="@dimen/dip_24">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/sp_17"
+                android:textColor="@color/colorBlack"
+                android:text="微信公众号"
+                android:layout_marginLeft="@dimen/dip_23"
+                android:layout_marginTop="@dimen/dip_11"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/sp_14"
+                android:textColor="@color/colorText10"
+                android:text="45456456465"
+                android:layout_marginLeft="@dimen/dip_23"
+                android:layout_marginTop="@dimen/dip_30"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

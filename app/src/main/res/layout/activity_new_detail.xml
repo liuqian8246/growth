@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/title_bar"
+            layout="@layout/layout_title_bar" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorWhite"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dip_20"
+                    android:layout_marginRight="@dimen/dip_30"
+                    android:layout_marginTop="@dimen/dip_12"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:text="从 2015 年 4 月起，Ant Design 在蚂蚁金服中 后台产品线迅速推广，对接多条业务线，覆盖"
+                    android:textColor="@color/colorText3"
+                    android:textSize="@dimen/sp_15" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dip_12"
+                    android:layout_marginLeft="@dimen/dip_20"
+                    android:layout_marginRight="@dimen/dip_41"
+                    android:layout_marginTop="@dimen/dip_8">
+
+                    <TextView
+                        android:id="@+id/tv_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2018-05-12"
+                        android:textColor="@color/colorText10"
+                        android:textSize="@dimen/sp_12" />
+
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <ImageView
+                        android:layout_width="@dimen/dip_16"
+                        android:layout_height="@dimen/dip_16"
+                        android:src="@drawable/seemore_3x" />
+
+                    <TextView
+                        android:id="@+id/tv_see_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dip_9"
+                        android:text="144"
+                        android:textColor="@color/colorText10"
+                        android:textSize="@dimen/sp_13" />
+
+                    <ImageView
+                        android:layout_width="@dimen/dip_16"
+                        android:layout_height="@dimen/dip_16"
+                        android:layout_marginLeft="@dimen/dip_16"
+                        android:src="@drawable/bianji_detail3x" />
+
+                </LinearLayout>
+                
+                <TextView
+                    android:layout_marginLeft="@dimen/dip_20"
+                    android:layout_marginRight="@dimen/dip_41"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dip_1"
+                    android:background="@color/color_E3E3E3"/>
+
+                <cn.lanhu.android_growth_plan.gaiban.mvvm.view.widget.ScrollWebView
+                    android:id="@+id/webview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dip_10">
+
+                    <TextView
+                        android:layout_marginLeft="@dimen/dip_24"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="评论"
+                        android:textColor="@color/colorText3"
+                        android:textSize="@dimen/sp_15"/>
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <ImageView
+                        android:layout_marginRight="@dimen/dip_45"
+                        android:id="@+id/iv_bianji"
+                        android:layout_width="@dimen/dip_24"
+                        android:layout_height="@dimen/dip_24"
+                        android:src="@drawable/tianxie3x"/>
+
+                </LinearLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+</layout>
