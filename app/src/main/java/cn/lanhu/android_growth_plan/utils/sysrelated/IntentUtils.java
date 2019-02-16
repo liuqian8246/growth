@@ -270,6 +270,16 @@ public class IntentUtils {
 
     }
 
+    /**
+     * 设置relsult为flag的intent且关闭当前ui
+     */
+    public void setResultOkWithFinishUi(int flag) {
+        ((Activity) mContext).setResult(flag, mIntent);
+        ((Activity) mContext).finish();
+        ((Activity) mContext).overridePendingTransition(R.anim.anim_enter2, R.anim.anim_exit2);
+
+    }
+
     public Intent getIntent() {
         return mIntent;
     }
